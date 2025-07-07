@@ -3,6 +3,12 @@
   themes : light --default;
 }
 
+body {
+  @apply bg-gradient-to-br from-[#a8d5ba] via-[#66bb6a] to-[#2e7d32];
+}
+
+
+
 
 .each-slide-effect {
   height: 60vh;
@@ -97,4 +103,33 @@
 }
 .hover\:rotate-y-180:hover {
   transform: rotateY(180deg);
+}
+
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
 }

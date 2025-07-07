@@ -1,60 +1,59 @@
 import React from "react";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLeaf } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
-        <nav className="grid grid-flow-col gap-4">
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Terms and Conditions</a>
-          
-        </nav>
-        <nav>
-          <div className="grid grid-flow-col gap-4">
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-              </svg>
-            </a>
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-              </svg>
-            </a>
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-              </svg>
-            </a>
-          </div>
-        </nav>
-        <aside>
+    <footer className="bg-gradient-to-r from-lime-100 via-green-100 to-emerald-100 text-green-900 px-6 py-10 rounded-t-xl shadow-inner">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-6">
+        {/* Brand and Nav Links */}
+        <div className="text-center lg:text-left space-y-4">
+          <h3 className="text-2xl font-bold text-emerald-700 flex items-center justify-center lg:justify-start gap-2">
+            <FaLeaf className="text-green-600" /> Garden Glee
+          </h3>
+          <nav className="flex flex-wrap gap-4 justify-center lg:justify-start text-sm">
+            <a className="hover:underline" href="#">About Us</a>
+            <a className="hover:underline" href="#">Contact</a>
+            <a className="hover:underline" href="#">Terms & Conditions</a>
+          </nav>
+        </div>
+
+        {/* Social Icons */}
+<div className="flex gap-5 text-green-700 text-xl">
+  <a
+    href="https://www.facebook.com/groups/1439704222995812/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-green-900"
+  >
+    <FaFacebookF />
+  </a>
+  <a
+    href="https://x.com/Love_plants"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-green-900"
+  >
+    <FaTwitter />
+  </a>
+  <a
+    href="https://www.instagram.com/p/DKzpQSTu7Zi/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-green-900"
+  >
+    <FaInstagram />
+  </a>
+</div>
+
+
+        {/* Copyright */}
+        <div className="text-sm text-center lg:text-right text-green-800">
           <p>
-            Copyright © {new Date().getFullYear()} - All right reserved by Garden Glee
-             Ltd
+            © {new Date().getFullYear()} <span className="font-semibold">Garden Glee Ltd</span> — All rights reserved.
           </p>
-        </aside>
-      </footer>
-    </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 
