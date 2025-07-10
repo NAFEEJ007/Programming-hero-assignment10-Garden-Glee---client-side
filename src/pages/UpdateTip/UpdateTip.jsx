@@ -26,7 +26,7 @@ const UpdateTip = () => {
     const UpdatedTip = Object.fromEntries(formData.entries());
     console.log(UpdatedTip);
     // send updated coffee to the db
-    fetch(`http://localhost:3000/sharetips/all/${_id}`, {
+    fetch(`https://garden-glee-server-nine.vercel.app/sharetips/all/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

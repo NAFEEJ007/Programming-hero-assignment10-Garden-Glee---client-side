@@ -29,8 +29,8 @@ export const router = createBrowserRouter([
         loader: async () => {
           // Promise.all is used to send both requests at the same time
           const [gardenersRes, eventsRes] = await Promise.all([
-            fetch("http://localhost:3000/gardeners"),
-            fetch("http://localhost:3000/events"),
+            fetch("https://garden-glee-server-nine.vercel.app/gardeners"),
+            fetch("https://garden-glee-server-nine.vercel.app/events"),
           ]);
 
           // Promise.all is used to parse both at the same time
@@ -57,19 +57,19 @@ export const router = createBrowserRouter([
 
       {
         path: "/gardeners",
-        loader: ()=>fetch('http://localhost:3000/gardeners/all'),
+        loader: ()=>fetch('https://garden-glee-server-nine.vercel.app/gardeners/all'),
         Component: ExploreGardeners,
       },
 
       {
         path: "/browse-Tips",
-        loader: () => fetch("http://localhost:3000/sharetips/public"),
+        loader: () => fetch("https://garden-glee-server-nine.vercel.app/sharetips/public"),
         Component: BrowseTips,
       },
       {
         path: "/tips-details/:_id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/sharetips/${params._id}`),
+          fetch(`https://garden-glee-server-nine.vercel.app/sharetips/${params._id}`),
         element: (
           <PrivateRoute>
             <TipsDetails></TipsDetails>
@@ -87,7 +87,7 @@ export const router = createBrowserRouter([
       {
         path: "/updateTip/:_id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/sharetips/${params._id}`),
+          fetch(`https://garden-glee-server-nine.vercel.app/sharetips/${params._id}`),
         element: (
           <PrivateRoute>
             <UpdateTip></UpdateTip>

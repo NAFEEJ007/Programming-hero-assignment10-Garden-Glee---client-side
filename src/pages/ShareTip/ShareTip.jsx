@@ -21,7 +21,7 @@ const ShareTip = () => {
     console.log(newShareTipData);
 
     // send data to the db
-    fetch("http://localhost:3000/sharetips", {
+    fetch("https://garden-glee-server-nine.vercel.app/sharetips", {
       method: "POST",
       headers: {
         "content-type": "application/json",

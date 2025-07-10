@@ -11,7 +11,7 @@ const MyTips = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/sharetips?email=${user.email}`)
+    fetch(`https://garden-glee-server-nine.vercel.app/sharetips?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setTips(data);
@@ -54,7 +54,7 @@ const MyTips = () => {
       console.log(result.isConfirmed);
       if (result.isConfirmed) {
         // start deleting the tip
-        fetch(`http://localhost:3000/sharetips/all/${_id}`, {
+        fetch(`https://garden-glee-server-nine.vercel.app/sharetips/all/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

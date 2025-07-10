@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
@@ -18,11 +19,27 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        alert("Logged out successfully!");
-        console.log(user.photoURL);
+        // console.log(user.photoURL);
+Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "🌿 You are Logged Out!",
+  text: "Hope to see you back in the garden soon!",
+  background: "#f0fdf4", // soft green background
+  color: "#2e7d32",      // deep green text
+  iconColor: "#43a047",  // healthy green check
+  showConfirmButton: false,
+  timer: 1800,
+  customClass: {
+    popup: "rounded-xl shadow-lg",
+    title: "text-lg font-semibold",
+  },
+});
+
       })
       .catch((error) => {
         console.log(error);
+
       });
   };
 
@@ -153,7 +170,7 @@ const Navbar = () => {
                   {user?.photoURL ? (
                     <img
                       alt="User Profile"
-                      className="w-full h-full object-cover"
+                      className="cursor-pointer w-full h-full object-cover"
                       src={user.photoURL}
                     />
                   ) : (
@@ -168,9 +185,9 @@ const Navbar = () => {
               {user && showLogoutButton && (
                 <button
                   onClick={handleLogOut}
-                  className="absolute top-full left--2 md:left-4 lg:left-1/2 lg:-translate-x-1/2 mt-2 opacity-100 transition-all duration-200 bg-white text-green-700 border border-green-400 px-3 py-1 rounded-xl shadow-md flex items-center gap-1 text-sm hover:bg-green-600 hover:text-white z-50"
+                  className="cursor-pointer absolute top-full left--2 md:left-4 lg:left-1/2 lg:-translate-x-1/2 mt-2 opacity-100 transition-all duration-200 bg-white text-green-700 border border-green-400 px-3 py-1 rounded-xl shadow-md flex items-center gap-1 text-sm hover:bg-green-600 hover:text-white z-50"
                 >
-                  <FaSignOutAlt className="text-current" />
+                  <FaSignOutAlt className="cursor-pointer text-current" />
                   Logout
                 </button>
               )}
