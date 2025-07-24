@@ -17,7 +17,7 @@ A vibrant Gardening Community & Resource Hub for plant lovers to share tips, dis
 ## 🛠️ Tech Stack
 ### Client:
 - React.js
-- React Router DOM
+- React Router
 - Firebase Authentication
 - Tailwind CSS
 
